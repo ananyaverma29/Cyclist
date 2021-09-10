@@ -45,6 +45,7 @@ path.velocityX = -5;
 //creating boy running
 mainCyclist  = createSprite(70,150);
 mainCyclist.addAnimation("SahilRunning",mainRacerImg1);
+mainCyclist.addAnimation("SahilRunning2",mainRacerImg2);
 mainCyclist.scale=0.07;
   
 //set collider for mainCyclist
@@ -130,7 +131,7 @@ function draw() {
     
     path.velocityX = 0;
     mainCyclist.velocityY = 0;
-    mainCyclist.addAnimation("SahilRunning",mainRacerImg2);
+    mainCyclist.changeAnimation("SahilRunning2",mainRacerImg2);
   
     pinkCG.setVelocityXEach(0);
     pinkCG.setLifetimeEach(-1);
@@ -186,12 +187,12 @@ function redCyclists(){
 
 function reset()
 {
-  gameState = PLAY;
   gameOver.visible = false;
-  mainCyclist.addAnimation("mainPlayer1.png","mainPlayer2.png");
+  mainCyclist.changeAnimation("SahilRunning",mainRacerImg1);
   pinkCG.destroyEach();
+  yellowCG.destroyEach();
+  redCG.destroyEach();
   distance = 0;
+  gameState = PLAY;
+  
 }
-
-
-
